@@ -1,33 +1,16 @@
 function single_element(arr) {
-  var l = arr.length;
-  var arr1 = Array();
-  var arr2=Array();var k=0;
-  var m=0;
-  for(var i=0;i<l+1;i++)
+  var arr1= new Array();
+  for(var i=0;i<arr.length;i++)
   {
-    if( i%2 !=0 )
-    {
-    arr1[k] = arr[i];
-    k++;
-    }
+    if(i%2==1)
+    arr1.push(arr[i]);
   }
+  var arr2 = new Array();
 
-  var sum=0;
-  for(var i=0;i<arr1.length+1;i++)
+  for(var i=0;i<arr1.length;i++)
   {
-    sum=0;
-    for(var j=0;j<l;j++)
-    {
-      if(arr1[i]==arr[j])
-        sum++;
-    }
-
-    if(sum == 1)
-    {
-      arr2[m]=arr1[i];
-      m++;
-    }
+    if(arr1.indexOf(arr1[i])==arr1.lastIndexOf(arr1[i]))
+      arr2.push(arr1[i]);
   }
-
   return arr2;
 }
